@@ -1,0 +1,344 @@
+/* Start variables */
+:root{
+    --main-color: #98633b;
+    --main-duration: 0.3s;
+}
+/* End variables */
+
+/* start global rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* small screens */
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+    .header{
+        padding: 40px;
+    }  
+}
+
+/* medium screens */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+    .header{
+        padding: 30px;
+    }  
+}
+
+/* large screens */
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+    .header{
+        padding: 20px;
+    }   
+}
+/* end global rules */
+
+/* start header section*/
+
+.header .container{
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo{
+    width:70px;
+    height:70px;
+}
+
+.header .links{
+    position: relative;
+    width: 100%;
+}
+
+.header .container .links a{
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: var(--main-duration);
+}
+
+.header .container .links a:hover{
+    padding-left:  20px;
+    padding-right:  20px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+/* end header section */
+
+/* start landing section */
+.landing{
+    color: white;
+    background-image: url(../images/saint.jpg);
+    background-size: cover;
+    height: calc(100vh - 60px);
+    position: relative;
+}
+
+.landing .intro-text{
+    direction: rtl;
+    text-align: justify;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    font-size: larger;
+}
+
+.landing .intro-text h1{
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--main-color);
+}
+.landing .intro-text p{
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+/* end landing section */
+
+/* start MostSaledCars section */
+.features .container{
+    background-color: #e7e7e7;
+}
+.features .container h3
+{
+    padding-bottom: 30px;
+}
+.features .container h1,
+.new-section .container h1,
+.about .container h1,
+.contact .container h1
+{
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+    opacity: 0.8;
+    color: var(--main-color);
+    letter-spacing: -5px;
+}
+
+.features .container h1 + p,
+.new-section .container h1 +p,
+.about .container h1 + p,
+.contact .container h1 + p
+{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: -90px;
+    padding-bottom: 30px;
+    opacity: 0.3;
+}
+.features .container .box1,
+.features .container .box2,
+.features .container .box3
+{
+    position: relative;
+    width: 400px;
+    height: 350px;
+    transform-style:preserve-3d;
+    transform-origin: right bottom;
+    transition: transform 1s;
+    margin: auto;
+}
+
+.features .container .box1:hover,
+.features .container .box2:hover,
+.features .container .box3:hover
+{
+    transform: translateX(-400px) rotateY(-180deg);
+}
+
+.features .container .back1,
+.features .container .back2,
+.features .container .back3
+{
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: #eee;
+    transform:rotateY(180deg);
+}
+
+.features .container .feat1,
+.features .container .feat2,
+.features .container .feat3
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.features{
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: #e7e7e7;
+}
+.features .container img{
+    width: 400px;
+    height: 350px;
+}
+.features .container .data{
+    text-align: left;
+}
+.features .feat{
+    padding: 20px;
+    text-align: center;
+}
+.features .feat p{
+    color: #777;
+}
+/* end MostSaledCars section */
+
+/* start NewlyAddedCars section */
+.new-section .container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.new-section .container img{
+    width: 400px;
+    height: 300px;
+}
+.new-section .container .grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+}
+.new-section .container .grid-container p{
+    font-weight: bold;
+}
+.new-section .container .grid-container .car1,
+.new-section .container .grid-container .car2,
+.new-section .container .grid-container .car3,
+.new-section .container .grid-container .car4,
+.new-section .container .grid-container .car5,
+.new-section .container .grid-container .car6
+{
+    margin: auto;
+    width: 450px;
+    transition: 0.2s ease;
+    filter: grayscale(100%);
+}
+.new-section .container .grid-container .car1:hover,
+.new-section .container .grid-container .car2:hover,
+.new-section .container .grid-container .car3:hover,
+.new-section .container .grid-container .car4:hover,
+.new-section .container .grid-container .car5:hover,
+.new-section .container .grid-container .car6:hover
+{
+    filter: grayscale(0%);
+    transform: translateY(-10px);
+}
+/* end NewlyAddedCars section */
+
+/* start about us section */
+.about{
+    background-color: #e7e7e7;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+.about .container .all{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.about .container .about1,
+.about .container .about2,
+.about .container .about3
+{
+    padding: 20px;
+    text-align: center;
+}
+.about .container .all i{
+    font-size: xx-large;
+}
+.about .container .all h3{
+    padding: 10px;
+}
+.about .container .all p{
+    font-size: small;
+    text-align: center;
+}
+/* end about us section*/
+
+/* start contact us section*/
+.contact {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}   
+.contact .container .cont h3{
+    font-weight: 800;
+    font-size: 20px;
+}
+.contact .container .cont .link{
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 25px;
+}
+/* end contact us section */
+
+/* start footer section*/
+.footer {
+    background-color: #e7e7e7;
+    text-align: center;
+    padding: 20px 10px;
+    font-size:18px;
+    font-weight: 800;
+    letter-spacing: 10px;
+}
+.footer span{
+    color: var(--main-color);
+}
+/* end footer section*/
+
+.gototop{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    right: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 30px;
+    background:snow;
+    color: var(--main-color);
+    font-size: 40px;
+}
